@@ -28,7 +28,7 @@ with e without the use of docker.
 In particular, browsertime application is used.
 In order to use the system, configure the file run_every with the desired experiment.
 The structure of the file is the following:
-./browsertime_run_h1_h2_h3.sh value1:value2..:value_n [bw/RTT/pl] [http-1/2/3] n_experiments name_interface
+`./browsertime_run_h1_h2_h3.sh value1:value2..:value_n [bw/RTT/pl] [http-1/2/3] n_experiments name_interface`
 
 
 
