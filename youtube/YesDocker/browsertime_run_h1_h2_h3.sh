@@ -5,6 +5,7 @@ http=$3
 num_esp=$4
 interface=$5
 video="false"
+cookie="CONSENT=YES+yt.422910894.it+FX+214" #is an example!!
 
 for t in ${network_param[@]}; do
     echo "#########BEFORE###########" >> http${http}_log_${name}.txt
@@ -31,6 +32,7 @@ for t in ${network_param[@]}; do
            --video $video \
            --videoParams.createFilmstrip $video \
            --visualMetrics $video \
+           --cookie $cookie \
            --videoParams.convert $video \
            --har har_http${http}_${name}_${t}_esp_${esp} \
            --resultDir /sitespeed/results_http${http}_${name}_${t}_esp_${esp} \
@@ -48,7 +50,7 @@ for t in ${network_param[@]}; do
            --videoParams.createFilmstrip $video \
            --visualMetrics $video \
            --videoParams.convert $video \
-           --cookie CONSENT=YES+yt.422910894.it+FX+214 \
+           --cookie $cookie \
            --har har_http${http}_${name}_${t}_esp_${esp} \
            --cacheClearRaw true \
            --resultDir /sitespeed/results_http${http}_${name}_${t}_esp_${esp}\
