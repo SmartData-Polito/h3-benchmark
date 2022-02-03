@@ -4,7 +4,7 @@ name=$2
 http=$3
 num_esp=$4
 interface=$5
-certificate="5V2I9iQ0NrsorG7qXJzxuVGyFcla/L4HNMyrzgx7X0E=" !! our example
+certificate="5V2I9iQ0NrsorG7qXJzxuVGyFcla/L4HNMyrzgx7X0E=" # !! our example
 video="false" #if True, in output browsertime will produce also the video of the screen
 echo "Hai inserito: Esperimenti-$1 name-$2 http-$3 numero_esp-$4"
 
