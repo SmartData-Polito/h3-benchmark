@@ -6,6 +6,7 @@ num_esp=$4
 interface=$5
 #interface="enx00243217c403"
 video="false"
+cookie="CONSENT=YES+yt.422910894.it+FX+214" #is an example!!
 echo "Hai inserito: Esperimenti-$1 name-$2 http-$3 numero_esp-$4"
 
 for t in ${network_param[@]}; do
@@ -36,7 +37,7 @@ for t in ${network_param[@]}; do
            --visualMetrics $video \
            --videoParams.convert $video \
            --viewPort="4096x2160" \
-           --cookie CONSENT=YES+yt.422910894.it+FX+214 \
+           --cookie $cookie \
            --cacheClearRaw true \
            --har har_http${http}_${name}_${t}_esp_${esp} \
            --resultDir results_http${http}_${name}_${t}_esp_${esp}\
@@ -54,7 +55,7 @@ for t in ${network_param[@]}; do
            --visualMetrics $video \
            --videoParams.convert $video \
            --viewPort="4096x2160" \
-           --cookie CONSENT=YES+yt.422910894.it+FX+214 \
+           --cookie $cookie \
            --cacheClearRaw true \
            --har har_http${http}_${name}_${t}_esp_${esp} \
            --resultDir results_http${http}_${name}_${t}_esp_${esp}\
