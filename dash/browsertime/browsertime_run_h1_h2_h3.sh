@@ -4,6 +4,7 @@ name=$2
 http=$3
 num_esp=$4
 interface=$5
+certificate="5V2I9iQ0NrsorG7qXJzxuVGyFcla/L4HNMyrzgx7X0E=" !! our example
 video="false" #if True, in output browsertime will produce also the video of the screen
 echo "Hai inserito: Esperimenti-$1 name-$2 http-$3 numero_esp-$4"
 
@@ -42,7 +43,7 @@ for t in ${network_param[@]}; do
         sudo docker run --rm -v "$(pwd)":/sitespeed -w / sitespeedio/browsertime \
          --chrome.args ignore-urlfetcher-cert-requests \
          --chrome.args autoplay-policy=no-user-gesture-required --chrome.args no-first-run \
-         --chrome.args ignore-certificate-errors-spki-list=5V2I9iQ0NrsorG7qXJzxuVGyFcla/L4HNMyrzgx7X0E= \
+         --chrome.args ignore-certificate-errors-spki-list=$certificate\
          -n 1 \
          --video $video \
          --videoParams.createFilmstrip $video \
@@ -58,7 +59,7 @@ for t in ${network_param[@]}; do
            --chrome.args ignore-urlfetcher-cert-requests \
            --chrome.args autoplay-policy=no-user-gesture-required --chrome.args no-first-run \
            --chrome.args origin-to-force-quic-on=130.192.95.216:8091 \
-           --chrome.args ignore-certificate-errors-spki-list=5V2I9iQ0NrsorG7qXJzxuVGyFcla/L4HNMyrzgx7X0E= \
+           --chrome.args ignore-certificate-errors-spki-list=$certificate\
            --chrome.args quic-version=h3 \
            -n 1 \
            --video $video \
