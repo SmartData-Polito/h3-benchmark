@@ -16,3 +16,19 @@ With the large scale census, you can test all the 12 k HTTP/3-enabled websites t
 
 ## Mobile Experiments
 In the mobile campaign, we tested a set of websites emulating mobile (tablet and smartphone) devices, with emulated mobile network conditions. We used a subset of 100 websites (25 per content provider), randomly chosen among the complete list of 12 k websites. The code is in the folder `mobile-campaign`, where the scripts allow you to visit the websites using BrowserTime via Docker and ERRANT to emulate the mobile network conditions.
+
+
+## Youtube
+
+In this folder are present the files for running the experiments with (limited):
+* Bandwidth
+* RTT
+* Packet Loss
+with e without the use of docker.
+In particular, browsertime application is used.
+In order to use the system, configure the file run_every with the desired experiment.
+The structure of the file is the following:
+./browsertime_run_h1_h2_h3.sh value1:value2..:value_n [bw/RTT/pl] [http-1/2/3] n_experiments name_interface
+
+
+
