@@ -3,7 +3,7 @@ network_param=$(echo $1 | tr ":" " ")
 name=$2
 http=$3
 num_esp=$4
-interface="eth0"
+interface=$5
 #interface="enx00243217c403"
 video="false"
 echo "Hai inserito: Esperimenti-$1 name-$2 http-$3 numero_esp-$4"
