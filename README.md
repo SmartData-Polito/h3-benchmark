@@ -33,3 +33,13 @@ The structure of the file is the following:
 
 It is important to configure in `./browsertime_run_h1_h2_h3_[fisico].sh` a valid cookie session.
 
+## Dash
+
+In this folder you can find all the files necessary to put on an nginx server that can provide a video using dash.
+In particular, before to put on the server, you have to run the script `1_create_certs.sh` to create fake certificate for QUIC (and also h2 if you want).
+After that, you can run `3_start_nginx.sh`.
+In our experiments setup we use Big Buck Bunny video, inside Tutorial.txt you can find the link where it is possibile to download everything.
+
+Browsertime folder contains again the scripts like `youtube` tu run a campain of experiments.
+Remember to set inside bash/browsertime/browsertime_run_h1_h2_h3.sh YOUR certificate that has been generated before.
+
