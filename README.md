@@ -21,9 +21,10 @@ In the mobile campaign, we tested a set of websites emulating mobile (tablet and
 ## Youtube
 
 In this folder are present the files for running the experiments with (limited):
-* Bandwidth
-* RTT
-* Packet Loss
+* Bandwidth.
+* RTT.
+* Packet Loss.
+
 with e without the use of docker.
 In particular, browsertime application is used.
 In order to use the system, configure the file run_every with the desired experiment.
