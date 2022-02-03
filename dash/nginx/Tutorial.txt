@@ -1,0 +1,5 @@
+Run the script 1_create_certs.sh to create fake certificates
+
+Run the script 3_start_nginx.sh to put on nginx server (docker installation is required)
+
+See the link at: http://reference.dashif.org/dash.js/latest/samples/getting-started/controlbar.html to see how to use (and download file) dash.js
