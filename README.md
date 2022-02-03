@@ -31,5 +31,5 @@ In order to use the system, configure the file run_every with the desired experi
 The structure of the file is the following:
 `./browsertime_run_h1_h2_h3.sh value1:value2..:value_n [bw/RTT/pl] [http-1/2/3] n_experiments name_interface`
 
-It is important to configure in `./browsertime_run_h1_h2_h3.sh` a valid cookie session.
+It is important to configure in `./browsertime_run_h1_h2_h3_[fisico].sh` a valid cookie session.
 
