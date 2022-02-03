@@ -4,8 +4,7 @@ name=$2
 http=$3
 num_esp=$4
 interface=$5
-video="true"
-echo "Hai inserito: Esperimenti-$1 name-$2 http-$3 numero_esp-$4"
+video="false"
 
 for t in ${network_param[@]}; do
     echo "#########BEFORE###########" >> http${http}_log_${name}.txt
@@ -17,7 +16,6 @@ for t in ${network_param[@]}; do
         sudo ./network_emulator.sh ${interface}::::${t}%
     elif [[ ${name} == "RTT" ]]; then
     #    sudo ./network_emulator.sh ${interface}:::${t}ms:
-        echo "Non setto nulla"
     else
         echo "Hai inserito tipo errato"
     fi
@@ -37,21 +35,8 @@ for t in ${network_param[@]}; do
            --har har_http${http}_${name}_${t}_esp_${esp} \
            --resultDir /sitespeed/results_http${http}_${name}_${t}_esp_${esp} \
            --pageCompleteCheckStartWait 540000 \
-           http://130.192.95.216:8090/controlbar.html --tcpdump
-      elif [[ ${http} == "2" ]]; then
-        sudo docker run --rm -v "$(pwd)":/sitespeed -w / sitespeedio/browsertime \
-         --chrome.args ignore-urlfetcher-cert-requests \
-         --chrome.args autoplay-policy=no-user-gesture-required --chrome.args no-first-run \
-         --chrome.args ignore-certificate-errors-spki-list=5V2I9iQ0NrsorG7qXJzxuVGyFcla/L4HNMyrzgx7X0E= \
-         -n 1 \
-         --video $video \
-         --videoParams.createFilmstrip $video \
-         --visualMetrics $video \
-         --videoParams.convert $video \
-         --har har_http${http}_${name}_${t}_esp_${esp} \
-         --resultDir /sitespeed/results_http${http}_${name}_${t}_esp_${esp}\
-         --pageCompleteCheckStartWait 540000 \
-         https://130.192.95.216:8091/controlbar.html --tcpdump
+           https://www.youtube.com/watch?v=aqz-KE-bpKQ --tcpdump
+           
       elif [[ ${http} == "3" ]]; then
           sudo docker run --rm -v "$(pwd)":/sitespeed -w / sitespeedio/browsertime \
            --chrome.args enable-quic \
@@ -67,14 +52,12 @@ for t in ${network_param[@]}; do
            --har har_http${http}_${name}_${t}_esp_${esp} \
            --cacheClearRaw true \
            --resultDir /sitespeed/results_http${http}_${name}_${t}_esp_${esp}\
-           --pageCompleteCheckStartWait 10000 \
+           --pageCompleteCheckStartWait 540000 \
            https://www.youtube.com/watch?v=aqz-KE-bpKQ --tcpdump
     else
         echo "Hai inserito http errato"
         exit -1
     fi
-    n_chunk=`cat results_http${http}_${name}_${t}_esp_${esp}/har_http${http}_${name}_${t}_esp_${esp}.har | egrep -o "_[0-9]*.m4v" | sort | uniq | wc -l`
-    echo "Esperimento ${name} - ${t}  numero - ${esp} - Chunk Visualizzati - ${n_chunk}  http - ${http}" | tee -a http${http}_log_${name}.txt
   done
   sudo ./network_emulator.sh remove
 done
