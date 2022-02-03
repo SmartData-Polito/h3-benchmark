@@ -65,8 +65,6 @@ for t in ${network_param[@]}; do
         echo "Hai inserito http errato"
         exit -1
       fi
-    #n_chunk=`cat results_http${http}_${name}_${t}_esp_${esp}/har_http${http}_${name}_${t}_esp_${esp}.har | egrep -o "_[0-9]*.m4v" | sort | uniq | wc -l`
-    #echo "Esperimento ${name} - ${t}  numero - ${esp} - Chunk Visualizzati - ${n_chunk}  http - ${http}" | tee -a http${http}_log_${name}.txt
     done
     sudo ./network_emulator.sh remove
 done
